@@ -1,32 +1,33 @@
 #!/bin/bash
+# Usage: cppclass <classname>
 
-CLASS=$1
-FILEID=$(echo $CLASS | tr "[:lower:]" "[:upper:]")_H_$RANDOM$RANDOM$RANDOM
+CLASSNAME=$1
+FILEID=$(echo $CLASSNAME | tr "[:lower:]" "[:upper:]")_H_$RANDOM$RANDOM$RANDOM
 
-echo "Creating class $CLASS..."
+echo "Creating C++ class '$CLASSNAME'..."
 
-cat <<EOF > $CLASS.h
+cat <<EOF > $CLASSNAME.h
 #ifndef $FILEID
 #define $FILEID
 
-class $CLASS
+class $CLASSNAME
 {
 public:
-	$CLASS();
-	virtual ~$CLASS();
+	$CLASSNAME();
+	virtual ~$CLASSNAME();
 };
 
 #endif // $FILEID
 EOF
 
-cat <<EOF > $CLASS.cpp
-#include "$CLASS.h"
+cat <<EOF > $CLASSNAME.cpp
+#include "$CLASSNAME.h"
 
-$CLASS::$CLASS()
+$CLASSNAME::$CLASSNAME()
 {
 }
 
-$CLASS::~$CLASS()
+$CLASSNAME::~$CLASSNAME()
 {
 }
 EOF
