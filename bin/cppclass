@@ -1,0 +1,32 @@
+#!/bin/bash
+
+CLASS=$1
+FILEID=$(echo $CLASS | tr "[:lower:]" "[:upper:]")_H_$RANDOM$RANDOM$RANDOM
+
+echo "Creating class $CLASS..."
+
+cat <<EOF > $CLASS.h
+#ifndef $FILEID
+#define $FILEID
+
+class $CLASS
+{
+public:
+	$CLASS();
+	virtual ~$CLASS();
+};
+
+#endif // $FILEID
+EOF
+
+cat <<EOF > $CLASS.cpp
+#include "$CLASS.h"
+
+$CLASS::$CLASS()
+{
+}
+
+$CLASS::~$CLASS()
+{
+}
+EOF

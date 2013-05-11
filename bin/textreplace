@@ -1,0 +1,12 @@
+#!/bin/bash
+
+INCLUDE='\.(c|cc|cpp|h|hh|hpp|java)$'
+EXCLUDE='(/\.svn|/\.git|/CVS)'
+
+for file in $(find -type f -print | egrep "$INCLUDE" | egrep -v "$EXCLUDE")
+do 
+	if [ -n "$(file -b $file | grep 'text')" ]
+	then
+		sed -i "s:$1:$2:" $file; 
+	fi
+done
