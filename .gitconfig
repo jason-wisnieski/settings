@@ -4,13 +4,15 @@
 [core]
 	editor = vim
 [alias]
-	st   = status -uno
-	ci   = commit
-	br   = branch
-	co   = checkout
-	lg   = log --oneline --abbrev-commit --all --graph --decorate --color
-	tree = forest --pretty=format:\"%C(red)%h %C(magenta)(%ar) %C(blue)%an %C(reset)%s\" --style=15 --reverse
+	st      = status -uno
+	ci      = commit
+	br      = branch
+	co      = checkout
+	lg      = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(yellow)%d%C(bold blue)%an: %C(reset)%s' 
+	hist    = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(yellow)%d%C(bold blue)%an: %C(reset)%s' --all
+	tree    = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(bold blue)%an %C(reset)%s'
+	trees   = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(bold blue)%an %C(reset)%s' --all
 	subinit = submodule update --init --recursive
-	maxgc = gc --prune=now --aggressive
+	maxgc   = gc --prune=now --aggressive
 [color]
 	ui = true
