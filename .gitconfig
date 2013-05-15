@@ -8,10 +8,10 @@
 	ci      = commit
 	br      = branch
 	co      = checkout
-	lg      = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(yellow)%d%C(bold blue)%an: %C(reset)%s' 
-	hist    = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(yellow)%d%C(bold blue)%an: %C(reset)%s' --all
-	tree    = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(bold blue)%an %C(reset)%s'
-	trees   = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(bold blue)%an %C(reset)%s' --all
+	lg      = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' 
+	hist    = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' --all
+	tree    = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s'
+	trees   = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s' --all
 	subinit = submodule update --init --recursive
 	maxgc   = gc --prune=now --aggressive
 [color]
