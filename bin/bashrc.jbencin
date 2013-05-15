@@ -17,12 +17,8 @@ BRED="\[\033[1;31m\]"
 
 BIPURPLE="\[\033[1;95m\]"
 
-function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-}
-
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1)/"
 }
 
 export PS1="$PLAIN\u$PLAIN@$BGREEN\w$YELLOW\$(parse_git_branch)$BWHITE\$ $PLAIN"
