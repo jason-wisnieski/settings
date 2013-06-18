@@ -4,7 +4,8 @@
 [core]
 	editor = vim
 [alias]
-	st      = status -uno
+	cr      = clone --recursive
+	st      = status
 	ci      = commit
 	br      = branch
 	co      = checkout
