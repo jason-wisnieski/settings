@@ -1,10 +1,10 @@
 # My .bashrc
 
 export PATH=~/bin:$PATH
-export PATH=$PATH:/pub/toolchains/arm/bin
-export PATH=$PATH:/pub/toolchains/arm/gcc/bin
 
-# prompt with git info
+#################################
+# Add git branch name to prompt #
+#################################
 
 PLAIN="\[\033[00m\]"
 YELLOW="\[\033[0;33m\]"
