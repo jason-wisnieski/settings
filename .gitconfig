@@ -16,4 +16,4 @@
 	subinit = submodule update --init --recursive
 	maxgc   = gc --prune=now --aggressive
 [color]
-	ui = true
+	ui = always

@@ -1,6 +1,17 @@
 # My .bashrc
 
+#################################
+# Environment variables         #
+#################################
+
 export PATH=~/bin:$PATH
+export LESS=-R # Enable color in less
+
+#################################
+# Aliases                       #
+#################################
+
+alias ls="ls --color=always"
 
 #################################
 # Add git branch name to prompt #
@@ -22,3 +33,5 @@ function parse_git_branch {
 }
 
 export PS1="$PLAIN\u$PLAIN@$BGREEN\w$YELLOW\$(parse_git_branch)$BWHITE\$ $PLAIN"
+
+
