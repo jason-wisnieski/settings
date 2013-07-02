@@ -1,0 +1,1 @@
+cvs status 2>&1 | sed -e "s/Status: Up-to-date//" | grep -e "Status:" -B 2 -A 3
