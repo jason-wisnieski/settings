@@ -1,19 +1,20 @@
 [user]
-	name = Jeff Bencin
-	email = jeff.bencin@telosalliance.com
+	name     = Jeff Bencin
+	email    = jeff.bencin@telosalliance.com
 [core]
-	editor = vim
+	editor   = vim
 [alias]
-	cr      = clone --recursive
-	st      = status
-	ci      = commit
-	br      = branch
-	co      = checkout
-	lg      = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' 
-	hist    = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' --all
-	tree    = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s'
-	trees   = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s' --all
-	subinit = submodule update --init --recursive
-	maxgc   = gc --prune=now --aggressive
+	cr       = clone --recursive
+	st       = status
+	ci       = commit
+	br       = branch
+	co       = checkout
+	lg       = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' 
+	hist     = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' --all
+	tree     = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s'
+	trees    = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s' --all
+	subinit  = submodule update --init --recursive
+	subclean = submodule foreach 'git clean -fxd'
+	maxgc    = gc --prune=now --aggressive
 [color]
-	ui = always
+	ui       = always
