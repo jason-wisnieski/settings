@@ -14,7 +14,7 @@
 	tree     = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s'
 	trees    = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s' --all
 	subinit  = submodule update --init --recursive
-	subclean = submodule foreach 'git clean -fxd'
+	subclean = submodule foreach --recursive 'git clean -fxd' 
 	maxgc    = gc --prune=now --aggressive
 [color]
 	ui       = always
