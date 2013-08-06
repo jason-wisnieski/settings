@@ -9,6 +9,7 @@
 	ci       = commit
 	br       = branch
 	co       = checkout
+	sb       = show-branch
 	lg       = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' 
 	hist     = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' --all
 	tree     = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s'
