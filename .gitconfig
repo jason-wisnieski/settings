@@ -17,5 +17,6 @@
 	subinit  = submodule update --init --recursive
 	subclean = submodule foreach --recursive 'git clean -fxd' 
 	maxgc    = gc --prune=now --aggressive
+	pushall  = push --recurse-submodules=on-demand
 [color]
 	ui       = always
