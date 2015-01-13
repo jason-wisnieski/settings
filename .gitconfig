@@ -1,6 +1,6 @@
 [user]
 	name     = Jeff Bencin
-	email    = jeff.bencin@telosalliance.com
+	email    = jeff.bencin@gmail.com
 [core]
 	editor   = vim
 [alias]
@@ -10,6 +10,7 @@
 	br       = branch
 	co       = checkout
 	sb       = show-branch
+	cpk      = cherry-pick
 	lg       = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' 
 	hist     = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' --all
 	tree     = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s'
