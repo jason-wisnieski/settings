@@ -26,7 +26,7 @@ get_logs() {
 
 	mkdir -p "$LOGDIR"
 	export LOGDIR
-	git log --pretty=format:'%h (%ai)%d %an: %s' --all > "$LOGDIR/PROJECT.log"
+	git log --pretty=format:'%h (%ai)%d %an: %s' --all > "$LOGDIR/$PROJECT.log"
 	git submodule foreach 'git log --pretty=format:"%h (%ai)%d %an: %s" > "$LOGDIR/$(basename $name).log"'
 
 	# Convert to Windows line endings
