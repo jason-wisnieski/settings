@@ -2,13 +2,11 @@
 # Usage: cppclass <classname>
 
 CLASSNAME=$1
-FILEID=$(echo $CLASSNAME | tr "[:lower:]" "[:upper:]")_H_$RANDOM$RANDOM$RANDOM
 
 echo "Creating C++ class '$CLASSNAME'..."
 
 cat <<EOF > $CLASSNAME.h
-#ifndef $FILEID
-#define $FILEID
+#pragma once
 
 class $CLASSNAME
 {
@@ -16,8 +14,6 @@ public:
 	$CLASSNAME();
 	virtual ~$CLASSNAME();
 };
-
-#endif // $FILEID
 EOF
 
 cat <<EOF > $CLASSNAME.cpp
