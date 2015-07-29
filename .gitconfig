@@ -11,13 +11,15 @@
 	co       = checkout
 	sb       = show-branch
 	cpk      = cherry-pick
-	lg       = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' 
-	hist     = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' --all
+	lg       = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' --date-order 
+	hist     = log --graph --date=short --pretty=format:'%C(green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' --date-order --all
 	tree     = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s'
 	trees    = forest --pretty=format:'%C(green)%h %C(magenta)(%ar) %C(cyan)%an: %C(reset)%s' --all
 	subinit  = submodule update --init --recursive
 	subclean = submodule foreach --recursive 'git clean -fxd' 
 	maxgc    = gc --prune=now --aggressive
+	pullall  = pull --recurse-submodules --rebase
 	pushall  = push --recurse-submodules=on-demand
+	ad       = "!f(){ git add $* && git status -s; };f"
 [color]
 	ui       = always
