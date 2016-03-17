@@ -23,3 +23,5 @@
 	ad       = "!f(){ git add $* && git status -s; };f"
 [color]
 	ui       = always
+[push]
+	recurseSubmodules = check
