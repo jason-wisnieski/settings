@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+cd home
+for file in $(find -type f); do
+	mkdir -p $HOME/$(dirname "$file")
+	ln -si "$(pwd)/$file" "$HOME/$file"
+done
+
+echo ""                    >> ~/.bashrc
+echo ". ~/bin/bashrc.bash" >> ~/.bashrc

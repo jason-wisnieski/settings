@@ -1,0 +1,7 @@
+{
+    "typescript.check.tscVersion": false,
+	"editor.insertSpaces": false,
+	"editor.fontSize": 11,
+	"editor.fontFamily": "monospace, 'Droid Sans Fallback'",
+	"shellcheck.run": "onSave"
+}
