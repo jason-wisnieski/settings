@@ -1,12 +1,22 @@
 #!/bin/bash
 
+# Exit this script on any error
 set -e
 
+# For each file in ./home, make symlink to it from user's home directory
 cd home
 for file in $(find -type f); do
-	mkdir -p $HOME/$(dirname "$file")
+	dirname=$(dirname "$file")
+	mkdir -p "$HOME/$dirname"
 	ln -si "$(pwd)/$file" "$HOME/$file"
 done
 
-echo ""                    >> ~/.bashrc
-echo ". ~/bin/bashrc.bash" >> ~/.bashrc
+# Add this repositories bashrc script to ~/.bashrc
+my_bashrc=~/bin/bashrc.bash
+if grep --quiet --fixed-string "$my_bashrc" ~/.bashrc; then
+	echo "Skipped inserting $my_bashrc, already there"
+else
+	echo "Inserted $my_bashrc into ~/.bashrc"
+	echo ""        >> ~/.bashrc
+	echo ". $my_bashrc" >> ~/.bashrc
+fi
