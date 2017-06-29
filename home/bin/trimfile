@@ -1,4 +1,4 @@
 #!/bin/sh
 # Remove extra whitespace from a file
 # Usage: trimfile <file>
-sed -i 's/[ \t]*$//' "$1"
+sed -i 's/[[:space:]]*$//' "$1"
