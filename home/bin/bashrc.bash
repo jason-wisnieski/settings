@@ -1,37 +1,17 @@
-# My .bashrc
-
-#################################
-# Environment variables         #
-#################################
-
-export PATH=~/bin:$PATH
-export LESS=-R # Enable color in less
-
-#################################
-# Aliases                       #
-#################################
-
-alias ls="ls --color=always"
-
-#################################
-# Add git branch name to prompt #
-#################################
-
-PLAIN="\[\033[00m\]"
-YELLOW="\[\033[0;33m\]"
-CYAN="\[\033[0;36m\]"
-
-BYELLOW="\[\033[1;33m\]"
-BWHITE="\[\033[1;37m\]"
-BGREEN="\[\033[1;32m\]"
-BRED="\[\033[1;31m\]"
-
-BIPURPLE="\[\033[1;95m\]"
+PATH=~/bin:$PATH:/pub/toolchains/arm/gcc/bin:/pub/toolchains/arm/bin
+export LANG=en_US.utf8
 
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1)/"
 }
 
-export PS1="$PLAIN\u$PLAIN@$BGREEN\w$YELLOW\$(parse_git_branch)$BWHITE\$ $PLAIN"
+PLAIN="\[\033[00m\]"
+YELLOW="\[\033[0;33m\]"
+BWHITE="\[\033[01;37m\]"
+BGREEN="\[\033[01;32m\]"
 
+export PS1="$PLAIN\u@\h:$BGREEN\w$YELLOW\$(parse_git_branch)$PLAIN\$ $PLAIN"
 
+# tell less to decode escape sequences
+export LESS=-R
+alias ls="ls --color=always"
