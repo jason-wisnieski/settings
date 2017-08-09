@@ -1,0 +1,15 @@
+[user]
+	name = Jason Wisnieski
+	email = jason.wisnieski@telosalliance.com
+[color]
+	ui = always
+[alias]
+	lg = log --graph --date-order --date=short --pretty=format:'%C(bold green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s'
+	hist = log --graph --date-order --date=short --pretty=format:'%C(bold green)%h %C(magenta)(%ar)%C(yellow)%d %C(cyan)%an: %C(reset)%s' --all
+[core]
+	editor = vim
+[push]
+	recurseSubmodules = on-demand
+[rerere]
+	enabled = 1
+	autoupdate = true
