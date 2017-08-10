@@ -15,3 +15,9 @@ export PS1="$PLAIN\u@\h:$BGREEN\w$YELLOW\$(parse_git_branch)$PLAIN\$ $PLAIN"
 # tell less to decode escape sequences
 export LESS=-R
 alias ls="ls --color=always"
+
+repodir="$(cd "$(dirname "$(readlink -f "$HOME/bin/bashrc.bash")")" || return; git rev-parse --show-toplevel)"
+( cd "$repodir" || return
+s=$(git status --porcelain 2>/dev/null|wc -l)
+if [ "$s" != 0 ]; then echo "User settings repository ($repodir) is unclean"; fi
+)
