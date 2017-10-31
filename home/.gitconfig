@@ -10,6 +10,3 @@
 	editor = vim
 [push]
 	recurseSubmodules = on-demand
-[rerere]
-	enabled = 1
-	autoupdate = true
